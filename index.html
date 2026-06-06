@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QC66Y5GW2Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QC66Y5GW2Q');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StoleBooks</title>
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+<!-- ==============================
+     HEADER
+     ============================== -->
+<header class="header">
+  <div class="header-inner">
+
+    <!-- LEFT: LOGO -->
+    <div class="logo-area">
+      <img src="images/logo.png" class="logo-img" alt="StoleBooks Logo">
+      <span class="logo-text">StoleBooks</span>
+    </div>
+
+    <!-- CENTER: NAV LINKS -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+    </div>
+
+    <!-- RIGHT: CART + HAMBURGER -->
+    <div class="header-actions">
+      <div class="cart-icon" onclick="toggleCart()">
+        🛒
+        <span id="cartCount" class="badge">0</span>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ==============================
+     SIDE MENU
+     ============================== -->
+<div id="side-menu" class="side-menu">
+  <div class="menu-header">
+    <span class="close-menu" onclick="toggleMenu()">✕</span>
+  </div>
+  <ul class="menu-links">
+    <li>🏠 Home</li>
+    <li>📚 Business</li>
+    <li>📖 Fiction</li>
+    <li>📘 Non-fiction</li>
+    <li>💡 Self-help</li>
+    <li>🇮🇳 Hindi</li>
+  </ul>
+</div>
+
+<!-- ==============================
+     CART PANEL
+     ============================== -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+<div class="cart-panel" id="cartPanel">
+  <h3>Your Cart</h3>
+  <div id="cartItems">
+    <p style="opacity:0.6">No books added yet</p>
+  </div>
+  <div class="cart-footer">
+    <button onclick="checkout()">Buy Now on Instagram</button>
+  </div>
+</div>
+
+<!-- ==============================
+     HERO SECTION
+     ============================== -->
+<div class="hero">
+  <div class="hero-content"></div>
+</div>
+
+<!-- ==============================
+     CENTER SEARCH BAR
+     ============================== -->
+<div class="center-search">
+  <div class="center-search-inner">
+    <input
+      id="search"
+      type="text"
+      placeholder="Search by title..."
+      oninput="liveSearch()"
+    />
+    <button onclick="searchBooks()">🔍 Search</button>
+  </div>
+</div>
+<div id="suggestions" class="suggestions"></div>
+
+<!-- ==============================
+     WHY CHOOSE US
+     ============================== -->
+<section>
+  <h2 class="section-title">Why Choose StoleBooks</h2>
+  <div class="why-grid">
+    <div class="why-card"><span>🎁</span><p>Freebies with every order</p></div>
+    <div class="why-card"><span>📚</span><p>5000+ happy readers</p></div>
+    <div class="why-card"><span>🤝</span><p>Most trusted bookstore experience</p></div>
+  </div>
+</section>
+
+<!-- ==============================
+     SHOP BY CATEGORY
+     ============================== -->
+<section id="categories" class="category-wrapper">
+  <h2 class="section-title">Shop by Category</h2>
+  <div class="category-row" id="categoryRow"></div>
+</section>
+
+<!-- ==============================
+     FEATURED CAROUSELS
+     ============================== -->
+<section id="featured">
+  <h2 class="section-title">🔥 Trending Now</h2>
+  <div class="carousel" id="trendingRow"></div>
+
+  <h2 class="section-title">💡 Self-Help Picks</h2>
+  <div class="carousel" id="selfhelpRow"></div>
+</section>
+
+<!-- ==============================
+     ALL BOOKS GRID
+     ============================== -->
+<section id="books">
+  <h2 class="section-title">Books</h2>
+  <div id="bookGrid" class="book-grid"></div>
+  <div class="explore-wrap">
+    <button id="exploreBtn" onclick="showAll()">Explore More</button>
+  </div>
+</section>
+
+<!-- ==============================
+     TESTIMONIALS
+     ============================== -->
+<section>
+  <h2 class="section-title">What Readers Say</h2>
+  <div class="test-grid">
+    <div class="test-card">"Amazing quality books & fast replies on Instagram." – Aditi</div>
+    <div class="test-card">"Affordable prices and lovely packaging." – Rohan</div>
+    <div class="test-card">"My go-to bookstore for novels." – Sneha</div>
+  </div>
+</section>
+
+<!-- ==============================
+     FOOTER
+     ============================== -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h3>StoleBooks</h3>
+      <p>Building a reading community, one book at a time.</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>8011552964<br>stolebooks4@gmail.com</p>
+    </div>
+    <div>
+      <h3>Join our community</h3>
+      <input placeholder="@instagram" />
+    </div>
+  </div>
+</footer>
+
+<!-- ==============================
+     MOBILE BOTTOM NAV
+     ============================== -->
+<div class="mobile-nav">
+  <div onclick="window.scrollTo({top:0,behavior:'smooth'})">🏠 <span>Home</span></div>
+  <div onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">📚 <span>Categories</span></div>
+  <div onclick="document.getElementById('search').focus()">🔍 <span>Search</span></div>
+  <div onclick="toggleCart()">🛒 <span>Cart</span></div>
+</div>
+
+<!-- External Script -->
+<script src="script.js"></script>
+
+</body>
+</html>
