@@ -172,7 +172,7 @@ header {
    ============================== */
 .hero {
   position: relative;
-  background: url("images/library.jpg") center center no-repeat;
+  background: url("images/hero-rohit.png") center center no-repeat;
   background-size: cover;
   aspect-ratio: 16 / 7;
   display: flex;
