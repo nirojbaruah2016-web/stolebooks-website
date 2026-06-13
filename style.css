@@ -3,23 +3,18 @@
    ============================== */
 
 /* CSS VARIABLES */
-:root {
-  --primary: #4b0082;
-  --primary-light: #6a0dad;
-  --bg: #faf7ff;
-  --text: #222;
-}
-
-/* RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Inter, system-ui, sans-serif;
+.hero-banner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 body {
-  background: var(--bg);
+  margin: 0;
+  background: #1b003d;
   color: var(--text);
   line-height: 1.6;
 }
@@ -172,13 +167,14 @@ header {
    ============================== */
 .hero {
   position: relative;
-  background: url("images/hero-rohit.png") center center no-repeat;
-  background-size: cover;
-  aspect-ratio: 16 / 7;
+  min-height: 100svh;
+  background: #120021;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  overflow: hidden;
+  padding: 0;
 }
 
 .hero-img {
@@ -191,93 +187,8 @@ header {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.22));
   pointer-events: none;
-}
-
-.hero-content {
-  max-width: 700px;
-  padding: 60px 20px;
-  color: #ffffff;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 200px;
-  font-weight: 800;
-  color: white;
-}
-
-.hero-content p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 24px;
-  opacity: 0.95;
-  color: white;
-}
-
-.hero-content button {
-  background: white;
-  color: #4b0082;
-  border: none;
-  padding: 12px 26px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.hero-content button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.hero h1 {
-  font-size: clamp(34px, 6vw, 56px);
-}
-
-.hero p {
-  margin: 16px 0 26px;
-  max-width: 520px;
-}
-
-.hero button {
-  padding: 14px 28px;
-  border-radius: 999px;
-  border: none;
-  font-weight: 600;
-  background: white;
-  color: var(--primary);
-  cursor: pointer;
-  margin-top: 40px;
-}
-
-/* HERO BUTTON */
-.hero-btn {
-  margin-top: 180px;
-  padding: 14px 28px;
-  border-radius: 999px;
-  border: none;
-  background: white;
-  color: #4b0082;
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.hero-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* FADE UP ANIMATION */
@@ -857,8 +768,9 @@ footer input {
    RESPONSIVE — MOBILE
    ============================== */
 @media (max-width: 768px) {
-  .hero {
-    aspect-ratio: 16 / 10;
+  .hero-banner {
+    width: 100%;
+    height: 100%;
   }
 
   .center-search-inner {
